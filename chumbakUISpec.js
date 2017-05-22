@@ -11,14 +11,14 @@ describe('UI Testing - chumbak.com', function(){
 	});
 
 	it('Navigate to First item(Tops & Blouses) from Fashion and verify the title', function(){
-		//Verifying whether the First value is showing under Fashion is to be Tops & Blouses.
+		//Get the first value from Fashion div
 		var firstFashionValue = element(by.repeater('sub_cat in cat.sub_cats.value.split(','))').row(0));
 		//Click on Tops & Blouses
 		firstFashionValue.element(by.linkText('Tops & Blouses')).click();
 		browser.sleep(3000);
 		//Get heading of the next page
 		var nextpageValue = element(by.className('text-center header-with-underline'));
-		//Check the title - the heading should be Tops & Blouses
+		//Check the heading - the heading should be Tops & Blouses
 		expect('Tops & Blouses'.toUpperCase()).toEqual(nextpageValue.getText());
 	});	
 	
